@@ -27,16 +27,14 @@ export function HomePage() {
 function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const heroImages = [
-     "https://i.imgur.com/xbRIYss.png",
-      
-       
-    "https://i.imgur.com/K5hVYFu.png",
-       "https://i.imgur.com/tH6xFe5.png",
    
-   "https://i.imgur.com/z1TwioX.png",
-      "https://i.imgur.com/eKadkxl.jpg",
-     "https://i.imgur.com/HZs0EAq.png",
-   "https://i.imgur.com/K6iPkUF.jpg",
+     "/banner/1.png",
+       "/banner/2.png",
+         "/banner/3.png",  
+         "/banner/4.png",  
+         "/banner/5.jpg", 
+          "/banner/6.png",
+      "/banner/7.jpg",
     
   ];
 
