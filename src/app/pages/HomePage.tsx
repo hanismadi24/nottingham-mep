@@ -25,7 +25,8 @@ export function HomePage() {
 }
 
 function HeroSection() {
-  const [currentImage, setCurrentImage] = useState(0);
+const [currentImage, setCurrentImage] = useState(0);
+const [imagesLoaded, setImagesLoaded] = useState(false);
   const heroImages = [
    
      "/banner/1.png",
@@ -37,14 +38,39 @@ function HeroSection() {
       "/banner/7.jpg",
     
   ];
+useEffect(() => {
+  const preloadImages = async () => {
+    const promises = heroImages.map((src) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+      });
+    });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    await Promise.all(promises);
 
+    setImagesLoaded(true);
+  };
+
+  preloadImages();
+}, []);
+useEffect(() => {
+  if (!imagesLoaded) return;
+
+  const interval = setInterval(() => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, [imagesLoaded]);
+if (!imagesLoaded) {
+  return (
+    <div className="h-screen bg-[#0F172A] flex items-center justify-center">
+      <div className="w-14 h-14 border-4 border-white/20 border-t-[#a11d17] rounded-full animate-spin"></div>
+    </div>
+  );
+}
   return (
     <section className="relative h-[90vh] min-h-[600px] bg-[#0F172A] overflow-hidden">
       <div className="absolute inset-0">
