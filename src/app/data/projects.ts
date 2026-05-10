@@ -35,7 +35,7 @@ export const projects: Project[] = [
     ],
     builtUpArea: "280,000 m²",
     year: "2020",
-    image: "https://i.imgur.com/8XqlWNi.png",
+    image: "/projects/1.png",
     description:
       "Luxury twin-tower residential complex in Dubai Marina with panoramic views and premium amenities.",
     scope:
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       "Complex power distribution for residential towers",
       "Water conservation and efficient HVAC design",
     ],
-    gallery: ["https://i.imgur.com/8XqlWNi.png"],
+    gallery: ["/projects/1.png"],
   },
   {
     id: "nura",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     ],
     builtUpArea: "50,000 m²",
     year: "2025",
-    image: "https://i.imgur.com/QyM0Suh.png",
+    image: "/projects/2.png",
     description:
       "High-rise residential development in Ras Al Khaimah featuring modern apartments with premium amenities and stunning waterfront views.",
     scope:
@@ -75,7 +75,7 @@ export const projects: Project[] = [
       "Water conservation systems",
       "Power distribution for residential units",
     ],
-    gallery: ["https://i.imgur.com/QyM0Suh.png"],
+    gallery: ["/projects/2.png"],
   },
   {
   id: "la-mazzoni",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   serviceType: ["Mechanical", "Electrical", "Plumbing", "BIM Coordination"],
   builtUpArea: "137,198 m²",
   year: "2028",
-  image: "https://i.imgur.com/16zLjSW.jpeg",
+  image: "/projects/5.jpg",
   description: "Wellness-integrated luxury branded residence on Al Marjan Island featuring biophilic architecture, wave-inspired design, and five-star hospitality amenities[citation:1][citation:3].",
   scope: "MEP Design Services for luxury branded residential development including mechanical, electrical, plumbing, and BIM coordination.",
   technicalChallenges: [
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     "Energy-efficient HVAC design for coastal high-rise development",
     "Water conservation and sustainable system implementation"
   ],
-  gallery: ["https://i.imgur.com/16zLjSW.jpeg"]
+  gallery: ["/projects/5.jpg"],
 },
   {
   id: "mama-shelter-hotel",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
   serviceType: ["Mechanical", "Electrical", "Plumbing", "BIM Coordination"],
   builtUpArea: "50,442 m²",
   year: "2025",
-  image: "https://i.imgur.com/4An3nJu.jpeg",
+  image: "/projects/3.jpg",
   description: "First Mama Shelter property in the Middle East, featuring a bold black facade with dynamic LED-lit fins, 197 hotel rooms and 203 branded apartments in Dubai's Business Bay district.",
   scope: "MEP Design Services for 25-storey branded aparthotel including mechanical, electrical, plumbing, and BIM coordination.",
   technicalChallenges: [
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     "Dual-lobby MEP separation for hotel guests and apartment residents",
     "Sustainable water management for desert climate operations"
   ],
-  gallery: ["https://i.imgur.com/4An3nJu.jpeg?w=1200&q=80"]
+  gallery: ["/projects/3.jpg"]
 },
 {
   id: "majid-al-futtaim-mosque",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
   ],
   builtUpArea: "20,000 m²",
   year: "2024",
-  image: "https://i.imgur.com/BlKSVLx.jpeg",
+  image: "/projects/4.png",
   description: "Middle East's first net-positive mosque featuring 203 solar PV panels generating 115% of energy needs, BREEAM-certified, with sustainable MEP systems and advanced water recycling technology.",
   scope: "Complete MEP design for net-positive religious building including advanced mechanical, electrical, plumbing systems, renewable energy integration, and sustainability consulting.",
   technicalChallenges: [
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     "Natural daylighting integration (80% of occupied spaces)",
     "EV charging station infrastructure planning",
   ],
-  gallery: ["https://i.imgur.com/BlKSVLx.jpeg"],
+  gallery: ["/projects/4.png"],
 },
   {
   id: "masaar-by-arada",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
   ],
   builtUpArea: "394,493 m²",
   year: "2026",
-  image: "https://i.imgur.com/2TS8mpo.png",
+  image: "/projects/6.png",
   description: "A forested megaproject in Sharjah featuring over 3,000 smart eco-friendly villas and townhouses across seven gated districts connected by a 'green spine' adorned with 50,000+ trees.",
   scope: "MEP Design Services for master-planned residential community including mechanical, electrical, plumbing, and BIM coordination for villas and townhouses.",
   technicalChallenges: [
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     "Efficient HVAC design for forested community in Sharjah climate",
     "Infrastructure utilities coordination across 19 million sq. ft. masterplan",
   ],
-  gallery: ["https://i.imgur.com/2TS8mpo.png"],
+  gallery: ["/projects/6.png"],
 },
   {
     id: "bahrain-mall",
