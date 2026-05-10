@@ -32,10 +32,10 @@ const [imagesLoaded, setImagesLoaded] = useState(false);
      "/banner/1.png",
        "/banner/2.png",
          "/banner/3.png",  
-         "/banner/4.png",  
-         "/banner/5.jpg", 
+           "/banner/5.jpg", 
           "/banner/6.png",
-      "/banner/7.jpg",
+        
+    
     
   ];
 useEffect(() => {
