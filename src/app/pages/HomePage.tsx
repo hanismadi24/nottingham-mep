@@ -17,7 +17,9 @@ export function HomePage() {
       <MetricsSection />
       <FeaturedProjectsSection />
       <ServicesSection />
+        <CTASection />
       <ClientsSection />
+    
     </div>
   );
 }
@@ -30,7 +32,7 @@ function HeroSection() {
        
     "https://i.imgur.com/K5hVYFu.png",
        "https://i.imgur.com/tH6xFe5.png",
-    "https://i.imgur.com/EnPMybn.png",
+   
    "https://i.imgur.com/z1TwioX.png",
       "https://i.imgur.com/eKadkxl.jpg",
      "https://i.imgur.com/HZs0EAq.png",
@@ -91,11 +93,11 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-3"
+            className="flex flex-col sm:flex-row gap-3 items-start"
           >
             <Link
               to="/projects"
-              className="px-5 py-2.5 bg-gradient-to-r from-[#a11d17] to-[#7d1712] text-white text-sm rounded-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2 group"
+              className="w-fit px-5 py-2.5 bg-gradient-to-r from-[#a11d17] to-[#7d1712] text-white text-sm rounded-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2 group"
             >
               Explore Projects
               <ArrowRight
@@ -105,7 +107,7 @@ function HeroSection() {
             </Link>
             <Link
               to="/contact"
-              className="px-5 py-2.5 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center"
+              className="w-fit px-5 py-2.5 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center"
             >
               Contact Us
             </Link>
@@ -387,7 +389,7 @@ function ServicesSection() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -514,3 +516,35 @@ function ClientsSection() {
 }
 
 export default ClientsSection;
+function CTASection() {
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-[#a11d17] to-[#7d1712] rounded-3xl p-12 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Our team of experts is ready to bring your vision to life with
+            innovative MEP solutions
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#a11d17] rounded-lg hover:shadow-2xl transition-all group font-semibold"
+          >
+            Get in Touch
+            <ArrowRight
+              size={20}
+              className="group-hover:translate-x-1 transition-transform"
+            />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
