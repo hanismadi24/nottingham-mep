@@ -1,0 +1,1317 @@
+<!doctype html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=960,height=540,initial-scale=0.5" />
+<title>NOTTINGHAM – Projects Portfolio</title>
+
+<!-- Bootstrap 5 CSS (for hero grid) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts (Inter) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+  html, body {
+  zoom: 60%;  /* يقلل كل شي 50% */
+  transform-origin: top left;
+}
+:root{
+  --page-w:1920px;
+  --page-h:1080px;
+  --accent:#C8102E;      /* brand red – matches NOTTINGHAM */
+  --brand-red:#981d16;   /* for hero compatibility */
+  --brand-gray:#545454;
+  --light-bg:#f8f8f8;
+  --font-family:"Helvetica Neue", Arial, 'Inter', sans-serif;
+}
+html,body{
+  margin:0;
+  padding:0;
+  background:#f6f6f6;
+  font-family:var(--font-family);
+  color:#111;
+}
+.paper{
+  width:var(--page-w);
+  height:var(--page-h);
+  margin:20px auto;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  page-break-after:always;
+}
+
+/* ===== NOTTINGHAM HERO SECTION – adapted for 1920×1080 ===== */
+.hero-section {
+  height: 1080px;            /* full paper height */
+  width: 100%;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero-section .container,
+.hero-section .container-fluid {
+  max-width: 100%;
+  width: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.09;
+  background-image: 
+    linear-gradient(var(--brand-red) 1px, transparent 1px),
+    linear-gradient(90deg, var(--brand-red) 1px, transparent 1px);
+  background-size: 120px 120px;
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+.hero-logo {
+ /* width: 112px;
+  height: 112px;*/
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-size: 4rem;          /* slightly larger for 1920 */
+  font-weight: 700;
+  color: var(--brand-red);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-divider {
+  width: 96px;
+  height: 6px;
+  background: var(--brand-red);
+  margin: 1rem 0;
+}
+.hero-subtitle {
+  font-size: 2.25rem;
+  color: var(--brand-gray);
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+.hero-description {
+  font-size: 1.25rem;
+  color: rgba(84, 84, 84, 0.8);
+  line-height: 1.75;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+.stat-item {
+  border-left: 4px solid var(--brand-red);
+  padding-left: 1rem;
+}
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--brand-red);
+}
+.stat-label {
+  font-size: 1rem;
+  color: var(--brand-gray);
+  margin-top: 0.25rem;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.btn-primary-custom {
+  padding: 0.75rem 2rem;
+  background: var(--brand-red);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(152, 29, 22, 0.3);
+}
+.btn-outline-custom {
+  padding: 0.75rem 2rem;
+  background: transparent;
+  color: var(--brand-red);
+  border: 2px solid var(--brand-red);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.btn-primary-custom:hover,
+.btn-outline-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(152, 29, 22, 0.4);
+}
+.hero-image-container {
+  position: relative;
+}
+.hero-building-image {
+  width: 100%;
+  height: 600px;           /* balanced for 1080 height */
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+.hero-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 9.5rem;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  border-left: 4px solid var(--brand-red);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--brand-red);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-red);
+}
+.badge-subtitle {
+  font-size: 0.875rem;
+  color: var(--brand-gray);
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+.scroll-mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--brand-red);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+.scroll-wheel {
+  width: 6px;
+  height: 12px;
+  background: var(--brand-red);
+  border-radius: 3px;
+  margin-top: 8px;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ===== original PDF styles (unchanged) ===== */
+.cover-page { height:100%; position:relative; }
+.cover-image{ width:100%; height:100%; background-size:100%; background-position:center; background-repeat:no-repeat; background-color:#fff; }
+.overlay-info{ position:absolute; bottom:80px; left:80px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.7); max-width:800px; }
+.overlay-project{ position:absolute; bottom:80px; left:80px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.7); max-width:800px; }
+.project-number{ font-size:120px; font-weight:900; line-height:0.9; margin:0 0 10px 0; letter-spacing:-3px; }
+.project-category{ font-size:48px; font-weight:300; margin:0 0 15px 0; letter-spacing:2px; text-transform:uppercase; }
+.project-name{ font-size:64px; font-weight:700; line-height:1.1; margin:0 0 20px 0; }
+.project-details{ font-size:24px; line-height:1.4; margin:0 0 10px 0; opacity:0.9; }
+.project-location{ font-size:20px; opacity:0.8; margin:0; }
+.company-page{ display:flex; height:100%; }
+.company-left{ width:550px; background:var(--light-bg); padding:70px 50px; box-sizing:border-box; }
+.company-right{ flex:1; padding:70px 60px; box-sizing:border-box; background:#fff; }
+.section-heading{ font-size:48px; font-weight:300; margin:0 0 40px 0; color:var(--accent); text-transform:uppercase; letter-spacing:2px; }
+.company-name-large{ font-size:42px; font-weight:700; line-height:1.1; margin:0 0 30px 0; color:#111; }
+.company-description{ font-size:20px; line-height:1.7; color:#333; margin:0 0 40px 0; }
+.highlight-text{ font-size:24px; line-height:1.6; color:#111; font-weight:400; margin:0 0 40px 0; padding-left:20px; border-left:3px solid var(--accent); }
+.mission-section, .vision-section{ margin-bottom:50px; }
+.mission-title, .vision-title{ font-size:32px; font-weight:600; margin:0 0 20px 0; color:var(--accent); }
+.mission-text, .vision-text{ font-size:20px; line-height:1.6; color:#333; margin:0; }
+.stats-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:40px; margin-top:60px; }
+.stat-item{ text-align:center; }
+.stat-number{  font-weight:1200; line-height:1; color:var(--accent); margin:0 0 10px 0; }
+.stat-label{ font-size:18px; color:#666; text-transform:uppercase; letter-spacing:1px; font-weight:400; }
+.right-content{ padding-top:40px; }
+.right-title{ font-size:32px; font-weight:600; margin:0 0 30px 0; color:#111; }
+.right-description{ font-size:20px; line-height:1.7; color:#333; margin:0 0 40px 0; }
+.values-list{ list-style:none; padding:0; margin:0 0 40px 0; }
+.values-list li{ font-size:20px; line-height:1.8; color:#333; margin-bottom:15px; padding-left:25px; position:relative; }
+.values-list li:before{ content:"•"; color:var(--accent); font-size:30px; position:absolute; left:0; top:-5px; }
+.services-container { display: flex; gap: 60px; margin-top: 40px; }
+.what-we-do-section { flex: 1; }
+.markets-section { flex: 1; }
+.detail{ display:flex; flex-direction:column; height:100%; padding:60px; box-sizing:border-box; }
+.project-header{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:30px; border-bottom:2px solid var(--accent); padding-bottom:20px; }
+.project-title-large{ font-size:48px; font-weight:300; margin:0; color:#111; text-transform:uppercase; }
+.project-subtitle{ color:#666; font-size:22px; }
+.images-row{ display:flex; gap:30px; flex:1; margin-bottom:30px; }
+.main-thumb{ flex:3; background-size:100% 100%; background-position:center; background-repeat:no-repeat; background-color:#000; border-radius:8px; overflow:hidden; }
+/*.side-col{ flex:1; display:flex; flex-direction:column; gap:30px; }*/
+.thumb{ flex:1; background-size:100% 100%; background-position:center; background-repeat:no-repeat; background-color:#000; border-radius:8px; overflow:hidden; }
+.meta-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:30px; margin-top:40px; padding-top:30px; border-top:1px solid #eee; }
+.meta-box{ padding:20px; background:var(--light-bg); border-radius:8px; }
+.meta-label{ font-size:16px; color:#666; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px; }
+.meta-value{ font-size:22px; font-weight:600; color:#111; display:inline-block; border-bottom:2px solid var(--accent); padding-bottom:3px; }
+.client-page{ padding:80px 60px; box-sizing:border-box; }
+.client-title{ font-size:48px; font-weight:800; margin:0 0 20px 0; color: #981d16; text-transform:uppercase; }
+.client-subtitle{ font-size:22px; color:#666; margin-bottom:30px; }
+.client-grid{ display:grid; grid-template-columns:repeat(11, 1fr); gap:15px; max-width:1800px; }
+.client-logo{ height:140px; display:flex; align-items:center; justify-content:center; border:2px solid #eee; background:#fafafa; border-radius:12px; transition:all 0.3s ease; }
+.client-logo:hover{ border-color:var(--accent); transform:translateY(-5px); }
+.client-logo svg{ width:100px; height:auto; fill:#444; }
+@media print{
+  body{background:#fff;}
+  .paper{margin:0;}
+  .client-logo:hover{ border-color:#eee; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<script>
+// ------------------------------------------------
+//   NOTTINGHAM PORTFOLIO – GENERATION SCRIPT
+//   (cover page replaced with full hero section)
+// ------------------------------------------------
+const COBANNER = "Untitled.png";   // kept for reference, not used in cover
+const projects = [
+  {
+    name: "LaMer by Elie Saab",
+    BuiltUpArea: "105,210 m2",
+    Location: "RAK , UAE",
+    Client: "ARTE  Developments",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments (Branded)",
+    images: [
+      "project/La Mer by ELIE SAAB/La_Mer_banner_82403769d9.jpg",
+      "project/La Mer by ELIE SAAB/original111.png",
+      "project/La Mer by ELIE SAAB/aaa.png",
+      "project/La Mer by ELIE SAAB/originalqqq.PNG",
+      "project/La Mer by ELIE SAAB/la_mer_g_7_389e8058bf.webp"
+    ]
+  },
+  {
+    name: "La Mazzoni",
+    BuiltUpArea: "137,198 m2",
+    Location: "RAK , UAE",
+    Client: "The Luxe Developers",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments (Branded)",
+    images: [
+      "project/LA Mazzoni  Residential/469392208_896121985937052_2057203512329313976_n.jpg",
+      "project/LA Mazzoni  Residential/luxe-zhk-la-mazzoni6-scaled.jpg",
+      "project/LA Mazzoni  Residential/469406648_595241406337269_5282678284194365080_n.jpg",
+      "project/LA Mazzoni  Residential/469326505_1676857716226814_3749408789470821442_n.jpg"
+    ]
+  },
+  {
+    name: "Al Mouj Quayside",
+    BuiltUpArea: "500,000 m²", // حافظت على المساحة من الكود القديم لعدم وجودها في القائمة الجديدة
+    Location: "Muscat, Oman",
+    Client: "MAF / Tanmia / Omran",
+    Scope: "MEP Master Planning",
+    Category: "Mixed-Use / General",
+    images: [
+       "project/Quayside Master Plan  Mixed-Use/main.png",
+  "project/Quayside Master Plan  Mixed-Use/cam05_final_sharp_boats_B-p-1600.png",
+  "project/Quayside Master Plan  Mixed-Use/cam02_final_sharp-p-1600.png",
+  "project/Quayside Master Plan  Mixed-Use/marina_yacht_club_final-p-1600.png"
+    ]
+  },
+  {
+    name: "SOLERA",
+    BuiltUpArea: "45,000 m2",
+    Location: "RAK, UAE",
+    Client: "Solera Developments",
+    Scope: "MEP Design Services",
+    Category: " Residential / Apartments (High-Rise)",
+    images: [
+      "project/SOLERA  Residential/SOLERA-10.jpg",
+      "project/SOLERA  Residential/c4-min.jpg",
+      "project/SOLERA  Residential/solera-Ext_6.jpg",
+      "project/SOLERA  Residential/solera_1.jpg",
+      "project/SOLERA  Residential/solera_6.jpg"
+    ]
+  },
+  {
+    name: "NURA",
+    BuiltUpArea: "50,000 m2",
+    Location: "RAK, UAE",
+    Client: "RAK Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments ( High-Rise )",
+    images: [
+      "project/NURA  Residential/enhanced_1920x1080.png",
+      "project/NURA  Residential/nura-1.png",
+      "project/NURA  Residential/302d1e28b467f9b69923ed66fe4c205e278545b95bb72aac00677c9741ad0525.png",
+      "project/NURA  Residential/qqq1.png"
+    ]
+  },
+  {
+    name: "Golf Links Residences",
+    BuiltUpArea: "49,700 m2",
+    Location: "Muscat , Oman",
+    Client: "MAF / Tanmia / Omran",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments",
+    images: [
+      "project/Golf Links Residences  Mixed-Use/681cc726e813592b3cac61e3_1907_AMGA_CAM-20_Collage-p-1600.png",
+      "project/Golf Links Residences  Mixed-Use/681cc72759abc4d2226dd0f3_1907_AMGA_CAM-15_Aerial-p-1600.png",
+      
+      "project/Golf Links Residences  Mixed-Use/AMGA_CAM-5_Pool_people-p-1600.png",
+      "project/Golf Links Residences  Mixed-Use/AMGA_CAM-2_Golf_townhouses-p-1600.png"
+    ]
+  },
+    {
+    "name": "Ocean Views",
+    "BuiltUpArea": "20,000 m2",
+    "Location": "Dubai , UAE",
+    "Client": "Emaar Properties",
+    "Scope": "MEP Design Services",
+    "Category": "Residential / Apartments",
+    "images": [
+      "project/Ocean Views/enhanced_1920x1080.png",
+ "project/Ocean Views/enhanced_2.png",
+
+  "project/Ocean Views/Ocean Views - Emaar.webp",
+    "project/Ocean Views/Ocean Views - Emaar 4.png",
+    ]
+  },
+    {
+    "name": "Island Park I & II - Dubai Creek Harbor",
+    "BuiltUpArea": "64000 m2",
+    "Location": "Dubai , UAE",
+    "Client": "Emaar Properties",
+    "Scope": "MEP Design Services",
+    "Category": "Residential / Apartments",
+    "images": [ "project/Island Park I & II - Dubai Creek Harbor/enhanced_2.png",
+    "project/Island Park I & II - Dubai Creek Harbor/2502778e2898199d66a39153ae48d9ad.jpeg",
+    "project/Island Park I & II - Dubai Creek Harbor/ffbb6c4335d1a79377e7fa71d90d5270 (1).jpeg",
+    "project/Island Park I & II - Dubai Creek Harbor/4.jpg",
+      
+    ]
+  },
+  {
+    name: "Masaar By Arada",
+    BuiltUpArea: "394,493 m2",
+    Location: "Sharjah , UAE",
+    Client: "Arada Developments",
+    Scope: "MEP Design Services",
+    Category: "Residential / Villas",
+    images: [
+      "project/massar/enhanced_1920x1080.png",
+      "project/massar/Arada-finishes-another-1000-homes-at-Masaar-as-Sharjahs.jpg",
+      "project/massar/Masaar3-hero-banner.jpg",
+      "project/massar/Masaar-2-Anber-09.jpg"
+    ]
+  },
+  {
+    name: "Golf Lane Villas",
+    BuiltUpArea: "238,000 m2",
+    Location: "Dubai , UAE",
+    Client: "Emaar Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Villas",
+    images: [
+      "project/golf-lane/HERO_1620X832_1-3.jpg",
+      "project/golf-lane/HERO_1620X832_3-2.jpg",
+      "project/golf-lane/PRO_EXT_1-4-670x500.jpg",
+      "project/golf-lane/PRO_EXT_3-3-1024x740.jpg"
+    ]
+  },
+  {
+    name: "Fairway Villas 3",
+    BuiltUpArea: " 180 – 280 m² (per villa)",
+    Location: "Dubai , UAE",
+    Client: "Emaar Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Villas",
+    images: [
+      "project/fairway-villas-3/HERO_1620X832_3.jpg",
+      "project/fairway-villas-3/Fairway-Villas-Emaar-South-hfre5-1170x785.jpg",
+      "project/fairway-villas-3/HERO_1620X832_1.jpg",
+      "project/fairway-villas-3/HERO_1620X832_5.jpg"
+    ]
+  },
+  {
+    name: "Address Residences",
+    BuiltUpArea: "108,000 m2",
+    Location: "Dubai , UAE",
+    Client: "Emaar Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments (Branded)",
+    images: [
+      "project/Address Residences  Residential/gy5yhmktcayjrsbwlconydi_30o03ck_lhenpycsy_y.jpg",
+      "project/Address Residences  Residential/original.PNG",
+      
+      "project/Address Residences  Residential/PRO_EXT_1-4-670x500.JPG",
+      "project/Address Residences  Residential/PRO_INT_1-4-670x500.jpg"
+    ]
+  },
+  {
+    name: "Al Mouj Villas",
+    BuiltUpArea: "220,000 m²",
+    Location: "Muscat , Oman",
+    Client: "MAF / Tanmia / Omran", // تم التعديل بناء على "Golf Villas" في قائمتك لنفس الموقع
+    Scope: "MEP Design Services",
+    Category: "Residential / Villas",
+    images: [
+      "project/Al Mouj Villas  Residential/main1.jpg",
+      "project/Al Mouj Villas  Residential/158TB-4-scaled.jpg",
+      "project/Al Mouj Villas  Residential/inner-image-1536x864.jpg",
+      "project/Al Mouj Villas  Residential/banner-3-1536x864.jpg"
+    ]
+  },
+  {
+    name: "Lavita Mansions",
+    BuiltUpArea: "260,000 m²",
+    Location: "Dubai , UAE",
+    Client: "Emaar Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Mansions",
+    images: [
+      "project/Lavita Mansions By Emaar  Residential/oasis-image-1.png",
+      "project/Lavita Mansions By Emaar  Residential/HERO_1620X832_2.jpg",
+      "project/Lavita Mansions By Emaar  Residential/HERO_1620X832_3.jpg",
+      "project/Lavita Mansions By Emaar  Residential/HERO_1620X832_4.jpg"
+    ]
+  },
+  {
+    name: "WaterCrest by Ellington",
+    BuiltUpArea: "35,673 m2",
+    Location: "Dubai , UAE",
+    Client: "Ellington Group",
+    Scope: "MEP Design Services",
+    Category: "Residential / Villas",
+    images: [
+      "project/The WaterCrest  Luxury Villas Development/the_watercrest_3.jpg",
+      "project/The WaterCrest  Luxury Villas Development/The-Watercrest-Slider-2-scaled.jpg",
+      "project/The WaterCrest  Luxury Villas Development/The-Watercrest-Slider-1-scaled.jpg",
+      "project/The WaterCrest  Luxury Villas Development/The-Watercrest-MainSection_top-1536x988.jpg"
+    ]
+  },
+ 
+  {
+    name: "52 | 42 Twin Towers",
+    BuiltUpArea: "280,000 m2",
+    Location: "Dubai , UAE",
+    Client: "Emaar Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments (High-Rise)",
+    images: [
+      "project/52  42 Twin Towers Residential/enhanced_1920x1080.png",
+      "project/52  42 Twin Towers Residential/52_42-building-dubai-2_1743714877.jpg",
+      "project/52  42 Twin Towers Residential/52_42-building-dubai-5-5_1743714878.jpg",
+      "project/52  42 Twin Towers Residential/b9c83108a361d465ffaeacd5756f1026-640x427.jpg"
+    ]
+  },
+   {
+    "name": "4 Residential Towers in Business Bay",
+    "BuiltUpArea": "270,000 m2",
+    "Location": "Dubai , UAE",
+    "Client": "Dubai Properties LLC",
+    "Scope": "MEP Design Services",
+    "Category": "Residential / Apartments ( High-Rise)",
+    "images": [ "project/Business Bay/enhanced_4.png","project/Business Bay/enhanced_2.png",
+     
+         "project/Business Bay/enhanced_3.png",
+         "project/Business Bay/peninsula-16.jpg",
+
+         
+
+    ]
+  }
+  ,{
+  "name": "4 Residential Towers in Culture Village",
+  "BuiltUpArea": "220,000 m2",
+  "Location": "Dubai , UAE",
+  "Client": "Dubai Properties LLC",
+  "Scope": "MEP Design Services",
+  "Category": "Residential / Apartments ( High-Rise)",
+  "images": [  "project/Culture Village/enhanced_2.png",
+  "project/Culture Village/2.jpeg",
+   "project/Culture Village/3.jpeg",
+ 
+    "project/Culture Village/5.jpeg",
+    ]
+},
+  {
+    name: "Anantara Hotel & Hotel Apartments",
+    BuiltUpArea: "76,449 m2",
+    Location: "Sharjah , UAE",
+    Client: "Arada Developments",
+    Scope: "MEP Design Services",
+    Category: " Hospitality / Hotels & Serviced Apartments",
+    images: [
+      "project/Anantara Resort  Hospitality/536773-Anantara Sharjah Resort & Residence.jpg",
+      "project/Anantara Resort  Hospitality/536774-Anantara Sharjah Resort & Residences - exterior view front - rendering-d39c32-original-1714733694.jpg",
+      "project/Anantara Resort  Hospitality/529858278_18369482875145232_8063886715334273483_n.jpg",
+      "project/Anantara Resort  Hospitality/528660346_18369482866145232_6668671296535952473_n.jpg"
+    ]
+  },
+  {
+    name: "Ritz Carlton Hotel",
+    BuiltUpArea: "34,058.01 m2",
+    Location: "Dubai , UAE",
+    Client: "Khamas Group of Investment",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Hotel",
+    images: [
+      "project/Ritz Carlton  Dubai,UAE/15768de9fe957cbbe3230ff40f85679c.png",
+      "project/Ritz Carlton  Dubai,UAE/67da553055fea94937015f7d6edd5024.png",
+      "project/Ritz Carlton  Dubai,UAE/ae4b56f0de558dae683d42a193b3cdd0.png"
+    ]
+  },
+  {
+    name: "Ibn Battuta Gate Hotel",
+    BuiltUpArea: "140,000 m²",
+    Location: "Dubai , UAE",
+    Client: "NH Collection Group",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Hotel",
+    images: [
+      "project/Oaks Ibn Battuta Gate Hotel/108008213_115041836955433_3237158849336361042_n.jpg",
+      "project/Oaks Ibn Battuta Gate Hotel/562e45ed8f3484588f5efc3f.jpg",
+      "project/Oaks Ibn Battuta Gate Hotel/oibn_home-banner-gallery-3_1920x900.jfif",
+      "project/Oaks Ibn Battuta Gate Hotel/oibn_home-banner-gallery-2_1920x900.jfif"
+    ]
+  },
+  {
+    name: "Gateway Arjan by Rotana",
+    BuiltUpArea: "75,000 m²",
+    Location: "RAK,UAE", // القائمة الجديدة لم تحدد الموقع لمشروع Arjaan
+    Client: "Rak Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Branded Apartments",
+    images: [
+      "project/Arjan by Rotana/enhanced_2.png",
+      "project/Arjan by Rotana/image (3).jpeg",
+      "project/Arjan by Rotana/image (7).jpeg",
+       "project/Arjan by Rotana/image (6).jpeg"
+    ]
+  },
+  {
+    name: "Mama Shelter Hotel",
+    BuiltUpArea: "70,000 m²",
+    Location: "Dubai , UAE",
+    Client: "Khamas Group of Investment",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Hotel",
+    images: [
+      "project/Mama Shelter/Mama-Shelter-Hotel-3.jpeg",
+      "project/Mama Shelter/Mama_Shelter_01.jpg",
+      
+      "project/Mama Shelter/19.webp",
+    "project/Mama Shelter/20.webp",
+    ]
+  },
+  {
+    name: "Oceanic Resort & SPA",
+    BuiltUpArea: "60,000 m²",
+    Location: "Khorfakkan, UAE",
+    Client: "Sharjah National Hotels",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Resort",
+    images: [
+      "project/Oceanic Resort/khorfakhan.jpg",
+      "project/Oceanic Resort/04-min.jpg",
+      "project/Oceanic Resort/PHOTO-2023-01-07-09-22-08-2.jpg",
+      "project/Oceanic Resort/khorfakhan.jpg"
+    ]
+  },
+  {
+    name: "InterContinental® Fujairah Resort",
+    BuiltUpArea: "90,000 m²",
+    Location: "Fujairah, UAE",
+    Client: "Al Ain Properties",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Resort",
+    images: [
+      "project/InterContinental Fujairah Resort/enhanced_1920x1080.png",
+      "project/InterContinental Fujairah Resort/336894432.jpg",
+      "project/InterContinental Fujairah Resort/INTERCONTINENTALFujairah_PUK_01.jpg",
+      "project/InterContinental Fujairah Resort/556d7021d9545407a2e7e69cb7f21ac1.jpg"
+    ]
+  },
+  {
+    name: "Meydan Hotel",
+    BuiltUpArea: "110,000 m²",
+    Location: "Dubai , UAE",
+    Client: "Nakheel / Meydan Managemnet",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Hotel",
+    images: [
+      "project/Meydan Hotel Refurbishment/enhanced_1920x1080.png",
+      "project/Meydan Hotel Refurbishment/The-Meydan-Hotel-1600x1253.png",
+      "project/Meydan Hotel Refurbishment/8O1A9478-scaled.png",
+      "project/Meydan Hotel Refurbishment/8O1A9685-scaled.png"
+    ]
+  },
+  {
+    name: "Hard Rock Hotel @ Marina 101",
+    BuiltUpArea: "160,000 m²",
+    Location: "Dubai , UAE",
+    Client: "Sheffield Holdings",
+    Scope: "MEP Design Services",
+    Category: "Hospitality / Hotel (High-Rise)",
+    images: [
+      "project/Hard Rock Hotel  Dubai,UAE/enhanced_1920x1080.png",
+      "project/Hard Rock Hotel  Dubai,UAE/Marina_101.jpg",
+      "project/Hard Rock Hotel  Dubai,UAE/KyT5KP5t-hardrock.jpg"
+    ]
+  },
+  {
+    name: "The Cube",
+    BuiltUpArea: "17,000 m²",
+    Location: "Dubai, UAE",
+    Client: "Amwaj Development",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments",
+    images: [
+      "project/The Cube  Residential/ebbzg8LCWlH51742372896_.png",
+      "project/The Cube  Residential/Exterior-4.jpg",
+      "project/The Cube  Residential/Exterior-1.jpg",
+      "project/The Cube  Residential/Common-Areas-9.jpg"
+    ]
+  },
+  {
+    name: "Golf Point - 4 Residential Building",
+    BuiltUpArea: "75,000 m2",
+    Location: "Dubai , UAE",
+    Client: "Emaar Properties PJSC",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments",
+    images: [
+      "project/Golf Point by Emaar  Residential/enhanced_1328x591.png",
+      "project/Golf Point by Emaar  Residential/Golf_Point_Apartments_at_Emaar_South_by_Emaar_Properties_e8b5e46419.jpg",
+      "project/Golf Point by Emaar  Residential/Golf_Point_Apartments_at_Emaar_South_by_Emaar_Properties_5b2e5a06f8.jpg"
+    ]
+  },
+  {
+    name: "Reef 1000",
+    BuiltUpArea: "95,000 m²",
+    Location: "Dubai, UAE",
+    Client: "REEF Real Estate Investment Co. LLC",
+    Scope: "Outdoor Cooling Services",
+    Category: "Residential / Apartments",
+    images: [
+      "project/reef1000/13147.jpg",
+      "project/reef1000/8b2798bc8fa8393df1a8c049fbde049a49b98867-1920x750.jpg",
+      "project/reef1000/zDh8LG4BO8S7qBmPG7Kr9eYM.png",
+      "project/reef1000/1-19_880x510_a05.jpg"
+    ]
+  },
+  {
+    name: "Reef 999",
+    BuiltUpArea: "90,000 m²",
+    Location: "Dubai, UAE",
+    Client: "REEF Real Estate Investment Co. LLC",
+    Scope: "Outdoor Cooling Services",
+    Category: "Residential / Apartments",
+    images: [
+      "project/reef999/reef999.jpg",
+      "project/reef999/8e2f86fad16ea57913a4651b97f64b73685225eb-1920x750.jpg",
+      "project/reef999/e341a1d10f7a76d5c2e8f613aff1d59225ac697f-1920x750.jpg",
+      "project/reef999/5a40092b868e940f21617e4f2571445f4b43e9aa-1920x750.jpg"
+    ]
+  },
+  {
+    name: "Island Heights",
+    BuiltUpArea: "26,400 m2",
+    Location: "RAK , UAE",
+    Client: "Rak Properties",
+    Scope: "MEP Design Services",
+    Category: "Residential / Apartments",
+    images: [
+      "project/Island Heights  Residential/Island-Heights-01.jpg",
+      "project/Island Heights  Residential/Island-Heights-hero-image1-pkn8fS.png",
+      "project/Island Heights  Residential/Island-Heights-by-Range-03.jpg"
+    ]
+  },
+  {
+    name: "AB Club",
+    BuiltUpArea: "10,000 m2",
+    Location: "RAK, UAE",
+    Client: "RAK Properties",
+    Scope: "MEP Design Services",
+    Category: "Mixed-Use / Recreational",
+    images: [
+      "project/AB Club  Recreational Amenities/main1.jpeg",
+      "project/AB Club  Recreational Amenities/main2.jpeg",
+      "project/AB Club  Recreational Amenities/main3.png"
+    ]
+  },
+  {
+    name: "DIA Academy",
+    BuiltUpArea: "35,000 m²",
+    Location: "Dubai, UAE",
+    Client: "Dubai International Academy",
+    Scope: "MEP Design Services",
+    Category: "Educational / School",
+    images: [
+      "project/aid/main2.png",
+      "project/aid/main1.png",
+      "project/aid/Aerial view-02.png"
+    ]
+  },
+  {
+    "name": "Tilal Al Ghaf Mosque",
+    "BuiltUpArea": "20,000 m2", 
+    "Location": "Dubai , UAE",
+    "Client": "Majid Al Futtaim",
+    "Scope": "MEP Design Services",
+    "Category": "Religious / Mosque",
+    "images": [
+      "project/Tilal Al Ghaf Mosque/main1.png",
+      "project/Tilal Al Ghaf Mosque/2022924_majidalfuttaimmosque_aerial_render_kettlecollective_398399.png",
+     
+      "project/Tilal Al Ghaf Mosque/2022923_majidalfuttaimmosque_mashrabiya_client_904682.png",
+        "project/Tilal Al Ghaf Mosque/2022919_majidalfuttaimmosque_prayerhall_client_1_846218.png"
+    ]
+  }
+];
+const book = document.body;
+
+
+
+// ========== PAGE 1 : NOTTINGHAM HERO COVER ==========
+
+book.insertAdjacentHTML("beforeend", `
+<div class="paper">
+  <section class="hero-section">
+    <div class="hero-pattern"></div>
+    <div class="container-fluid">
+      <div class="hero-content">
+        <div class="row align-items-center g-5">
+          <!-- Left side – content -->
+          <div class="col-lg-6">
+            <img src="lg2.png" alt="NOTTINGHAM Logo" class="hero-logo">
+            <div>
+             
+              <div class="hero-divider"></div>
+            </div>
+            <h2 class="hero-subtitle">Mechanical & Electrical<br>Consulting Engineers</h2>
+            <p class="hero-description">Since 2010, delivering comprehensive MEP engineering solutions for commercial, residential, and industrial projects across the UAE with excellence and innovation.</p>
+            <div class="stats-container">
+              <div class="stat-item"><div class="stat-number">16+</div><div class="stat-label">Years</div></div>
+              <div class="stat-item"><div class="stat-number">600+</div><div class="stat-label">Projects</div></div>
+              <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Clients</div></div>
+            </div>
+            
+          </div>
+          <!-- Right side – building image -->
+          <div class="col-lg-6">
+            <div class="hero-image-container">
+         <div style="
+display:grid;
+grid-template-columns:repeat(12,1fr);
+grid-template-rows:repeat(6,70px);
+gap:12px;
+width:80%;
+margin-left:auto;
+position:relative;
+">
+
+<!-- الصورة الرئيسية -->
+<div style="grid-column:1 / 9; grid-row:1 / 5; overflow:hidden; border-radius:4px;">
+<img src="test13.png" style="width:100%; height:100%; object-fit:cover;">
+</div>
+
+<!-- صورة يمين أعلى -->
+<div style="grid-column:9 / 13; grid-row:1 / 3; overflow:hidden; border-radius:4px;">
+<img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600"
+style="width:100%; height:100%; object-fit:cover;">
+</div>
+
+<!-- صورة يمين وسط -->
+<div style="grid-column:9 / 13; grid-row:3 / 5; overflow:hidden; border-radius:4px;">
+<img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600"
+style="width:100%; height:100%; object-fit:cover;">
+</div>
+
+<!-- شريط سفلي -->
+<div style="grid-column:1 / 10; grid-row:5 / 7; overflow:hidden; border-radius:4px; border-top:4px solid #111;">
+<img src="https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=1200"
+style="width:100%; height:100%; object-fit:cover;">
+</div>
+
+<!-- مربع السنة -->
+<div style="grid-column:10 / 13; grid-row:5 / 7; background:#981d16; border-radius:4px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
+<span style="font-size:26px; font-weight:900;">2026</span>
+<span style="font-size:10px; letter-spacing:2px;">NOTTINGHAM</span>
+</div>
+
+</div>
+              <div class="hero-badge">
+                <div class="badge-icon"><i data-lucide="check-circle" style="width: 28px; height: 28px; color: white;"></i></div>
+                <div><div class="badge-title"></div><div class="badge-subtitle">Quality Assured</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+</div>
+`);
+// ========== PAGE: ARCHITECTURAL MOSAIC GRID ==========
+
+// ========== PAGE 2 : COMPANY PROFILE (PREMIUM CRIMSON & BOLD DESIGN) ==========
+// ========== PAGE 2 : COMPANY PROFILE (CENTERED MINIMALIST DESIGN) ==========
+// ========== PAGE 2 : COMPANY PROFILE (EXPERT PERSPECTIVE - CENTERED) ==========
+// ========== PAGE 2 : COMPANY PROFILE (CENTERED & ORIGINAL INFO) ==========
+
+
+
+book.insertAdjacentHTML("beforeend", `
+<div class="paper">
+  <div class="company-page" style="display: flex; flex-direction: column; padding: 60px 80px; background: #fff; height: 100%; box-sizing: border-box; font-family: 'Arial', sans-serif; position: relative; color: #111;">
+    
+    <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #333;">2</div>
+
+    <!-- العنوان -->
+    <div style="margin-bottom: 40px; border-bottom: 2px solid #111; padding-bottom: 20px;">
+      <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
+        <div style="width: 40px; height: 4px; background: #981d16;"></div>
+        <h3 style="font-size: 16px; font-weight: 700; color: #981d16; text-transform: uppercase; letter-spacing: 4px; margin: 0;">Identity</h3>
+      </div>
+      <h1 style="font-size: 45px; font-weight: 900; color: #111; margin: 0; text-transform: uppercase;">About <span style="color: #981d16;">Nottingham</span></h1>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div style="flex-grow: 1; display: flex; gap: 50px; margin-top: 20px;">
+      
+      <!-- الجانب الأيسر: About & Services (مستبدل Key Expertise) -->
+      <div style="flex: 1.2; display: flex; flex-direction: column;">
+        <div>
+          <p style="font-size: 16px; line-height: 1.7; color: #444; margin-bottom: 20px; text-align: justify;">
+            Nottingham Mechanical & Electrical Consulting Engineers is a premier multidisciplinary firm providing high-end engineering solutions. Since our inception, we have been committed to delivering innovative, sustainable design solutions that integrate cutting-edge technology with creative excellence.
+          </p>
+          <p style="font-size: 16px; line-height: 1.7; color: #444; text-align: justify; margin-bottom: 30px;">
+            With a diverse portfolio spanning hospitality, residential, commercial, and master planning, our team is dedicated to shaping meaningful spaces that respond to context and inspire future growth across the UAE and the region.
+          </p>
+          
+          <!-- قسم الخدمات الجديد بدلاً من Key Expertise -->
+          <div style="margin-top: 20px; padding-top: 30px; border-top: 1px solid #eee;">
+            <h2 style="color: #981d16; font-size: 18px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px;">Our Services</h2>
+            
+            <!-- Electrical Services -->
+            <div style="margin-bottom: 20px;">
+              <h3 style="color: #111; font-size: 16px; font-weight: 700; margin-bottom: 10px; border-left: 3px solid #981d16; padding-left: 10px;">ELECTRICAL SYSTEMS</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px 15px;">
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> HV/LV Substations</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Power Generation & UPS</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Lighting Design & Control</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Fire Detection & Alarm</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Earthing & Lightning Protection</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> CCTV & Security Systems</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> BMS & Home Automation</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Guest Room Management</div>
+              </div>
+            </div>
+            
+            <!-- Mechanical Services -->
+            <div style="margin-bottom: 20px;">
+              <h3 style="color: #111; font-size: 16px; font-weight: 700; margin-bottom: 10px; border-left: 3px solid #981d16; padding-left: 10px;">MECHANICAL SYSTEMS</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px 15px;">
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> HVAC Systems</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Water Distribution</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Drainage & Plumbing</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Fire Protection</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Water Treatment Plants</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Irrigation Systems</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> LPG & Natural Gas</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Medical & Lab Gases</div>
+              </div>
+            </div>
+            
+            <!-- Specialized Services -->
+            <div>
+              <h3 style="color: #111; font-size: 16px; font-weight: 700; margin-bottom: 10px; border-left: 3px solid #981d16; padding-left: 10px;">SPECIALIZED SOLUTIONS</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px 15px;">
+                  <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Outdoor Cooling</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> District Cooling</div>
+              
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Retail Design Management</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Design Review & VE</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Fit-Out Design</div>
+                <div style="font-size: 13px; color: #555;"><span style="color: #981d16;">•</span> Construction Supervision</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- خط فاصل عمودي أحمر -->
+      <div style="width: 2px; background: #981d16;"></div>
+
+      <!-- الجانب الأيمن: Mission & Vision -->
+      <div style="flex: 1; padding-left: 30px; display: flex; flex-direction: column; justify-content: center; gap: 60px;">
+         <div>
+          <h2 style="color: #981d16; font-size: 28px; font-weight: 800; text-transform: uppercase; margin-bottom: 25px;">Vision</h2>
+          <p style="font-size: 20px; line-height: 1.6; color: #222; font-weight: 500;">
+            To be a regional leader in engineering innovation and digital design, delivering sustainable growth by nurturing the firm's human capital and technical expertise.
+          </p>
+        </div>
+        <div>
+          <h2 style="color: #981d16; font-size: 28px; font-weight: 800; text-transform: uppercase; margin-bottom: 25px;">Mission</h2>
+          <p style="font-size: 20px; line-height: 1.6; color: #222; font-weight: 500;">
+            With excellence, integrity, and reliability, we craft innovative and sustainable MEP design solutions empowering our clients and cultivating lasting professional relationships.
+          </p>
+        </div>
+
+       
+      </div>
+    </div>
+
+    <!-- القيم الأساسية فقط (بدون إحصائيات) -->
+    <div style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 30px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: 30px; align-items: center;">
+        <span style="font-size: 12px; font-weight: 900; color: #981d16; text-transform: uppercase; letter-spacing: 2px;">Core Values:</span>
+        <span style="font-size: 12px; font-weight: 700; color: #333; text-transform: uppercase;">Innovation</span>
+        <span style="font-size: 12px; color: #ccc;">|</span>
+        <span style="font-size: 12px; font-weight: 700; color: #333; text-transform: uppercase;">Integrity</span>
+        <span style="font-size: 12px; color: #ccc;">|</span>
+        <span style="font-size: 12px; font-weight: 700; color: #333; text-transform: uppercase;">Commitment</span>
+        <span style="font-size: 12px; color: #ccc;">|</span>
+        <span style="font-size: 12px; font-weight: 700; color: #333; text-transform: uppercase;">Sustainability</span>
+      </div>
+      <div style="font-size: 12px; color: #999; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+        Nottingham MEP Consulting Engineers
+      </div>
+    </div>
+
+  </div>
+</div>
+`);
+
+// ========== PAGE 3 : KEY CLIENTS (unchanged) ==========
+
+book.insertAdjacentHTML("beforeend", `
+<div class="paper">
+
+  <div class="client-page" style="display: flex; flex-direction: column; height: 100%; padding: 80px 60px; box-sizing: border-box;">
+    <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #333;">3</div>
+   <div style="margin-bottom: 40px; border-bottom: 2px solid #111; padding-bottom: 20px;">
+  <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
+    <div style="width: 40px; height: 4px; background: #981d16;"></div>
+    <h3 style="font-size: 16px; font-weight: 700; color: #981d16; text-transform: uppercase; letter-spacing: 4px; margin: 0;">Clients</h3>
+  </div>
+  <h1 style="font-size: 45px; font-weight: 900; color: #111; margin: 0; text-transform: uppercase;">Key <span style="">Clients</span></h1>
+  <div style="font-size: 18px; color: #666; margin-top: 10px; font-weight: 300;">Trusted organizations we proudly collaborate with</div>
+</div>
+    
+    <div class="client-grid" style="flex-grow: 1; display: grid; grid-template-columns: repeat(11, 1fr); gap: 15px;">
+    ${Array.from({length: 37}).map((_, i) => `
+      <div class="client-logo" style="height: 120px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; background: #fafafa; border-radius: 8px;">
+        <img src="../clients/image (${i+1}).png" alt="Client ${i+1}" style="width: 85%; height: 85%; object-fit: contain;">
+      </div>
+      `).join("")}
+    </div>
+
+   
+
+  </div>
+</div>
+`);
+
+
+
+// ========== PAGE: LEADERSHIP MESSAGE (ENLARGED PHOTO & BOLD DESIGN) ==========
+book.insertAdjacentHTML("beforeend", `
+<div class="paper">
+  <div class="leadership-page" style="height: 100%; background: #fff; display: flex; align-items: center; padding: 0 80px; position: relative; overflow: hidden; font-family: 'Segoe UI', sans-serif;">
+    <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #333;">4</div>
+    <div style="flex: 0.7; position: relative; z-index: 2; display: flex; justify-content: flex-start;">
+      
+      <div style="position: absolute; top: -25px; left: -25px; width: 120px; height: 120px; border-top: 12px solid #981d16; border-left: 12px solid #981d16; z-index: 0;"></div>
+      
+      <div style="width: 420px; height: 550px; position: relative; z-index: 1; overflow: hidden; box-shadow: 30px 30px 60px rgba(0,0,0,0.15); border: 1px solid #eee;">
+         <img src="manager.jpeg" alt="Fadi Mustafa" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+      </div>
+      
+      <div style="position: absolute; bottom: -25px; right: 150px; width: 120px; height: 120px; border-bottom: 12px solid #111; border-right: 12px solid #111; z-index: 2;"></div>
+    </div>
+
+    <div style="flex: 1.3; padding-left: 70px; position: relative; z-index: 2;">
+      
+      <div style="margin-bottom: 35px;">
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+          <div style="width: 60px; height: 10px; background: #981d16;"></div>
+          <span style="font-size: 16px; font-weight: 800; color: #981d16; text-transform: uppercase; letter-spacing: 5px;">Executive Insight</span>
+        </div>
+        <h1 style="font-size: 58px; font-weight: 900; color: #111; margin: 0; letter-spacing: -2px; text-transform: uppercase; line-height: 1;">Leadership Message</h1>
+      </div>
+
+      <div style="position: relative; margin-top: 20px;">
+        <p style="font-size: 20px; color: #333; line-height: 1.75; text-align: justify; margin: 0; font-weight: 400; letter-spacing: -0.2px;">
+          At <strong style="color: #111; font-weight: 800;">NOTTINGHAM</strong> Mechanical & Electrical Consulting Engineers, we believe that engineering excellence is achieved through <span style="color: #981d16; font-weight: 700;">innovation, integrity, and a clear vision</span> for the future. 
+          <br><br>
+          With over 20 years of experience in the industry, I am proud to lead a dedicated team committed to delivering reliable and high-quality MEP consultancy services. Our success has been shaped by the trust and collaboration of our valued clients and partners. 
+          <br><br>
+          Together with our talented staff, we continuously strive to deliver efficient, sustainable, and forward-thinking engineering solutions. We remain committed to supporting the evolving needs of the construction sector while maintaining the highest professional standards.
+        </p>
+      </div>
+
+      <div style="margin-top: 45px; display: flex; justify-content: space-between; align-items: flex-end;">
+         <div>
+            <p style="font-size: 18px; color: #888; margin-bottom: 5px; font-style: italic;">Regards,</p>
+            <h2 style="font-size: 32px; font-weight: 900; color: #111; margin: 0; letter-spacing: -1px;">Fadi Mustafa</h2>
+            <p style="font-size: 15px; color: #981d16; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-top: 8px;">Founder & General Manager</p>
+         </div>
+         
+         <div style="opacity: 0.15; transform: rotate(-5deg);">
+            <div style="border: 3px solid #111; padding: 10px 20px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">
+                Nottingham <br> Quality Assured
+            </div>
+         </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+`);
+
+
+/*book.insertAdjacentHTML("beforeend", `
+<div class="paper">
+  <div class="projects-page" style="height: 100%; padding: 60px 50px; background: #fff; box-sizing: border-box; display: flex; flex-direction: column; position: relative; font-family: 'Arial', sans-serif;">
+    <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #333;">5</div>
+    <div style="margin-bottom: 50px; border-bottom: 2px solid #111; padding-bottom: 20px;">
+      <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
+        <div style="width: 40px; height: 4px; background: #981d16;"></div>
+        <h3 style="font-size: 16px; font-weight: 700; color: #981d16; text-transform: uppercase; letter-spacing: 4px; margin: 0;">Portfolio</h3>
+      </div>
+      <h1 style="font-size: 45px; font-weight: 900; color: #111; margin: 0; text-transform: uppercase;">Selected Projects</h1>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; align-items: stretch; gap: 0;">
+      
+      <div style="flex: 1; padding: 0 20px 0 0; border-right: 1px solid #ddd; display: flex; flex-direction: column;">
+        <h4 style="font-size: 16px; color: #111; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; min-height: 45px;">Branded &<br>Residential</h4>
+        <ul style="list-style: none; padding: 0; font-size: 17px; color: #444; line-height: 2.2;">
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>LaMer by Elie Saab</strong><br><small style="color:#888; padding-left:12px;">RAK, Branded</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>La Mazzoni</strong><br><small style="color:#888; padding-left:12px;">RAK, Branded</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Address Residences</strong><br><small style="color:#888; padding-left:12px;">Dubai, Branded</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>SOLERA</strong><br><small style="color:#888; padding-left:12px;">RAK, Residential</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>NURA</strong><br><small style="color:#888; padding-left:12px;">RAK, Residential</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>The Cube</strong><br><small style="color:#888; padding-left:12px;">Dubai, Residential</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Island Heights</strong><br><small style="color:#888; padding-left:12px;">RAK, Residential</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>52 | 42 Twin Towers</strong><br><small style="color:#888; padding-left:12px;">Dubai, Residential</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Golf Point</strong><br><small style="color:#888; padding-left:12px;">Emaar South</small></li>
+        </ul>
+      </div>
+
+      <div style="flex: 1; padding: 0 20px; border-right: 1px solid #ddd; display: flex; flex-direction: column;">
+        <h4 style="font-size: 16px; color: #111; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; min-height: 45px;">Villas &<br>Mansions</h4>
+        <ul style="list-style: none; padding: 0; font-size: 17px; color: #444; line-height: 2.2;">
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Masaar By Arada</strong><br><small style="color:#888; padding-left:12px;">Sharjah</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Golf Lane Villas</strong><br><small style="color:#888; padding-left:12px;">Emaar South</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Fairway Villas 3</strong><br><small style="color:#888; padding-left:12px;">Emaar South</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Al Mouj Villas</strong><br><small style="color:#888; padding-left:12px;">Muscat</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Lavita Mansions</strong><br><small style="color:#888; padding-left:12px;">The Oasis</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>WaterCrest by Ellington</strong><br><small style="color:#888; padding-left:12px;">Dubai</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Emaar South Villas</strong><br><small style="color:#888; padding-left:12px;">Dubai</small></li>
+        </ul>
+      </div>
+
+      <div style="flex: 1; padding: 0 20px; border-right: 1px solid #981d16; display: flex; flex-direction: column;">
+        <h4 style="font-size: 16px; color: #111; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; min-height: 45px;">Hospitality &<br>Leisure</h4>
+        <ul style="list-style: none; padding: 0; font-size: 17px; color: #444; line-height: 2.2;">
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Anantara Hotel</strong><br><small style="color:#888; padding-left:12px;">Sharjah</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Ritz Carlton Hotel</strong><br><small style="color:#888; padding-left:12px;">Dubai</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Hard Rock Hotel</strong><br><small style="color:#888; padding-left:12px;">Marina 101</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>InterContinental®</strong><br><small style="color:#888; padding-left:12px;">Fujairah Resort</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Mama Shelter Hotel</strong><br><small style="color:#888; padding-left:12px;">Dubai</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Gateway Arjaan</strong><br><small style="color:#888; padding-left:12px;">Rotana</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Oceanic Resort & SPA</strong><br><small style="color:#888; padding-left:12px;">Khorfakkan</small></li>
+        </ul>
+      </div>
+
+      <div style="flex: 0.9; padding: 0 0 0 20px; display: flex; flex-direction: column;">
+        <h4 style="font-size: 16px; color: #111; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; min-height: 45px;">Mixed-Use &<br>Special</h4>
+        <ul style="list-style: none; padding: 0; font-size: 17px; color: #444; line-height: 2.2;">
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Al Mouj Quayside</strong><br><small style="color:#888; padding-left:12px;">Muscat, Mixed-Use</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Golf Links Residences</strong><br><small style="color:#888; padding-left:12px;">Muscat</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>AB Club</strong><br><small style="color:#888; padding-left:12px;">RAK, Recreational</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Reef 1000 | 999</strong><br><small style="color:#888; padding-left:12px;">Outdoor Cooling</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Ibn Battuta Gate</strong><br><small style="color:#888; padding-left:12px;">Hotel Refurbishment</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Meydan Hotel</strong><br><small style="color:#888; padding-left:12px;">Refurbishment</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>DIA Academy</strong><br><small style="color:#888; padding-left:12px;">Educational</small></li>
+          <li><span style="color:#981d16; font-weight:bold;">•</span> <strong>Tilal Al Ghaf Mosque</strong><br><small style="color:#888; padding-left:12px;">Worship</small></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #111; padding-top: 15px;">
+      <div style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 2px;">© Nottingham Engineering Excellence</div>
+      <div style="font-size: 20px; font-weight: 900; color: #981d16;">NOTTINGHAM</div>
+    </div>
+
+  </div>
+</div>
+`);*/
+// ========== PROJECT PAGES (unchanged) ==========
+let x = 6;
+projects.forEach((project) => {
+
+const name = project.name;
+const images = project.images;
+const BuiltUpArea = project.BuiltUpArea;
+const Location = project.Location;
+const Client = project.Client;
+const Scope = project.Scope;
+const Category=project.Category;
+const flexDirection = images.length > 3 ? 'column' : 'row';
+const currentImage = images[0];
+const secimage = images[1];
+const nextImage = images[2] || images[0];
+const thirdImage = images[3] || images[2] || images[0];
+  const thirdImageHTML = (flexDirection === 'column') 
+    ? `<div class="thumb" style="background-image:url('${thirdImage}')"></div>` 
+    : '';
+  // project cover page
+  book.insertAdjacentHTML("beforeend", `
+  <div class="paper">
+    <div class="cover-page">
+      <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #fff;">${x}</div>
+      <div class="cover-image" style="background-image:url('${currentImage}')"></div>
+      <div class="overlay-project">
+        <div class="project-name">${name}</div>
+        <div class="project-details">${Category} • ${BuiltUpArea}</div>
+        <div class="project-location">${Location}</div>
+      </div>
+    </div>
+  </div>
+  `);
+
+  // project detail page
+  book.insertAdjacentHTML("beforeend", `
+  <div class="paper">
+    <div class="detail">
+      <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #333;">${x =x+1}</div>
+      <div class="project-header">
+        <div>
+          <div class="project-title-large">${name}</div>
+          <div class="project-subtitle">Project Overview & Details</div>
+        </div>
+      </div>
+      <div class="images-row">
+        <div class="main-thumb" style="background-image:url('${secimage}')"></div>
+      
+        <div class="side-col" style="flex:1; display:flex; flex-direction:${flexDirection}; gap:30px;">
+          <div class="thumb" style="background-image:url('${nextImage}')"></div>
+   ${thirdImageHTML}
+        </div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-box"><div class="meta-label">Built-up Area</div><div class="meta-value">${BuiltUpArea}</div></div>
+        <div class="meta-box"><div class="meta-label">Location</div><div class="meta-value">${Location}</div></div>
+        <div class="meta-box"><div class="meta-label">Client</div><div class="meta-value">${Client}</div></div>
+        <div class="meta-box"><div class="meta-label">Scope</div><div class="meta-value">${Scope}</div></div>
+      </div>
+    
+    </div>
+  </div>
+  `);
+x = x + 1; });
+// ========== FINAL PAGE: CONTACT & FOOTER (INDEPENDENT PAGE) ==========
+book.insertAdjacentHTML("beforeend", `
+<div class="paper">
+  <div class="company-page" style="flex-direction: column; justify-content: space-between; padding: 100px 80px;">
+      <div style="position: absolute; top: 40px; right: 80px; font-size: 14px; font-weight: bold; color: #333;">${x}</div>
+    <div style="max-width: 900px;">
+      <h1 style="font-size: 72px; font-weight: 800; color: #981d16; margin-bottom: 20px; letter-spacing: -2px;">GET IN TOUCH</h1>
+      <div style="width: 150px; height: 10px; background: #981d16; margin-bottom: 40px;"></div>
+      <p style="font-size: 26px; color: #333; line-height: 1.6; font-weight: 300;">
+        We are ready to bring your next vision to life with precision engineering and innovative MEP solutions.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; margin: 60px 0;">
+      
+      <div style="border-left: 6px solid #981d16; padding-left: 30px;">
+        <h4 style="font-size: 22px; font-weight: 800; color: #111; margin-bottom: 15px; text-transform: uppercase;">Dubai Office</h4>
+        <p style="font-size: 18px; color: #555; line-height: 1.8; margin: 0;">
+          Business Bay, Clover Bay Tower<br>
+          Office 506, Dubai, UAE<br>
+          P.O. Box: 123456
+        </p>
+      </div>
+
+      <div style="border-left: 6px solid #333; padding-left: 30px;">
+        <h4 style="font-size: 22px; font-weight: 800; color: #111; margin-bottom: 15px; text-transform: uppercase;">Direct Contact</h4>
+        <p style="font-size: 18px; color: #555; line-height: 1.8; margin: 0;">
+          <strong>Email:</strong> info@nottingham-mep.com<br>
+          <strong>Phone:</strong> +971 50 589 0672<br>
+          <strong>Web:</strong> www.nottingham-mep.com
+        </p>
+      </div>
+
+    </div>
+
+    <div style="flex-grow: 1; background: #f9f9f9; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 80px; border: 1px solid #eee;">
+       <span style="font-size: 100px; color: #eee; font-weight: 900; letter-spacing: 10px;">NOTTINGHAM</span>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 6px solid #981d16; padding-top: 40px; width: 100%;">
+       <div>
+          <div style="font-size: 20px; font-weight: 900; color: #981d16; letter-spacing: 4px; text-transform: uppercase;">
+             PASSION <span style="color: #333; margin: 0 10px;">|</span> INTEGRITY <span style="color: #333; margin: 0 10px;">|</span> COMMITMENT
+          </div>
+          <div style="font-size: 16px; color: #666; margin-top: 10px; font-weight: 400;">
+             Nottingham Mechanical & Electrical Consulting Engineers
+          </div>
+       </div>
+
+       <div style="text-align: right;">
+          <div style="font-size: 14px; color: #999; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 5px;">
+             Projects Portfolio <span style="color: #981d16;">2026</span>
+          </div>
+          <div style="font-size: 14px; color: #981d16; font-weight: 600;">
+             ESTABLISHED IN THE UAE
+          </div>
+       </div>
+    </div>
+
+  </div>
+</div>
+`);
+ /* <div style="margin-top: 40px;">
+        <div style="font-size: 24px; font-weight: 600; color: var(--accent); margin-bottom: 20px;">Project Description</div>
+        <div style="font-size: 20px; line-height:1.7; color:#333;">
+          ${name} represents a landmark development showcasing innovative engineering solutions 
+          and sustainable design principles. Our team delivered comprehensive MEP services 
+          ensuring optimal performance, energy efficiency, and long-term operational reliability 
+          for this prestigious project.
+        </div>
+      </div>*/
+// Initialize Lucide icons (for hero cover)
+lucide.createIcons();
+</script>
+
+<!-- Bootstrap JS (optional, for any interactive elements) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -9,6 +9,7 @@ export function Navbar() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -17,48 +18,40 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const isTransparent = isHomePage && !isScrolled && !isOpen;
+const isProjectDetail = location.pathname.startsWith("/projects/") && location.pathname !== "/projects";
+const isTransparent = isHomePage && !isScrolled && !isOpen;
+const isProjectDetailTransparent = isProjectDetail && !isScrolled && !isOpen;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isTransparent
-          ? "bg-transparent border-transparent"
-          : "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
-      }`}
+   className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+  isTransparent
+    ? "bg-transparent border-transparent"
+    : isProjectDetailTransparent
+    ? "bg-white/40 border-transparent"
+    : "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
+}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#a11d17] to-[#7d1712] rounded-lg flex items-center justify-center">
-              <span className="text-white text-xl font-bold">N</span>
-            </div>
-            <div>
-              <div
-                className={`font-bold text-lg leading-none transition-colors ${
-                  isTransparent ? "text-white" : "text-[#0F172A]"
-                }`}
-              >
-                Nottingham
-              </div>
-              <div
-                className={`text-sm transition-colors ${
-                  isTransparent ? "text-white/80" : "text-[#64748b]"
-                }`}
-              >
-                MEP Consultancy
-              </div>
-            </div>
-          </Link>
+          <Link to="/" className="flex items-center">
+  <img
+    src={isTransparent ? "/logo.png" : isProjectDetailTransparent ? "/logo2.png" : "/logo2.png"}
+    alt="Nottingham Logo"
+    className="h-[68px] w-auto object-contain transition-all duration-300"
+  />
+</Link>
+
 
           <div className="hidden lg:flex items-center gap-8">
             <Link
               to="/"
               className={`transition-colors ${
                 isTransparent
-                  ? "text-white hover:text-white/80"
-                  : "text-[#0F172A] hover:text-[#a11d17]"
+  ? "text-white hover:text-white/80"
+  : isProjectDetailTransparent
+  ? "text-[#0F172A] hover:text-[#a11d17]"
+  : "text-[#0F172A] hover:text-[#a11d17]"
               }`}
             >
               Home
@@ -93,17 +86,7 @@ export function Navbar() {
             >
               About Us
             </Link>
-            <Link
-              to="/insights"
-              className={`transition-colors ${
-                isTransparent
-                  ? "text-white hover:text-white/80"
-                  : "text-[#0F172A] hover:text-[#a11d17]"
-              }`}
-            >
-              Insights
-            </Link>
-            <Link
+             <Link
               to="/careers"
               className={`transition-colors ${
                 isTransparent
@@ -112,7 +95,25 @@ export function Navbar() {
               }`}
             >
               Careers
+            </Link> 
+            <Link
+              to="/clients"
+              className={`transition-colors ${
+                isTransparent
+                  ? "text-white hover:text-white/80"
+                  : "text-[#0F172A] hover:text-[#a11d17]"
+              }`}
+            >
+            Clients 
             </Link>
+         
+            <a href="/portfolio/portfolio.html" className={`transition-colors ${
+                isTransparent
+                  ? "text-white hover:text-white/80"
+                  : "text-[#0F172A] hover:text-[#a11d17]"
+              }`} target="_blank">
+  Portfolio
+</a>
             <Link
               to="/contact"
               className="px-6 py-2.5 bg-gradient-to-r from-[#a11d17] to-[#7d1712] text-white rounded-lg hover:shadow-lg transition-all"
@@ -170,11 +171,11 @@ export function Navbar() {
                 About Us
               </Link>
               <Link
-                to="/insights"
+                to="/clients"
                 onClick={() => setIsOpen(false)}
                 className="block px-4 py-2 text-[#0F172A] hover:bg-[#F8FAFC] rounded-lg"
               >
-                Insights
+                Clients
               </Link>
               <Link
                 to="/careers"
@@ -183,6 +184,14 @@ export function Navbar() {
               >
                 Careers
               </Link>
+     <a
+  href="/portfolio/portfolio.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block px-4 py-2 text-[#0F172A] hover:bg-[#F8FAFC] rounded-lg"
+>
+  Portfolio
+</a>
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
